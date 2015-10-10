@@ -1,8 +1,8 @@
 # ezsql
 An an easy-to-use SQL builder
 
-### HOW TO USE
-#### select
+## HOW TO USE
+### SELECT
 
     $res = Sql::select('a, b')
        ->from('table')
@@ -13,7 +13,7 @@ An an easy-to-use SQL builder
        ->limit(0,1)
        ->forUpdate()->of('d')
        ->get($db);
-#### update
+### UPDATE
     
     $rows = Sql::update('table')
        ->set('a', 1)
@@ -23,14 +23,14 @@ An an easy-to-use SQL builder
        ->exec($db)
        ->rows
        
-#### 3. insert
+### INSERT
 
     $newId = Sql::insertInto('table')
        ->values(['a'=>1])
        ->exec($db)
        ->lastInsertId()
        
-#### 4. delete
+### DELETE
    
     $rows = Sql::deleteFrom('table')
        ->where('b=?', 2)
