@@ -2,6 +2,9 @@
 An an easy-to-use SQL builder
 
 ## HOW TO USE
+
+    $db = new \PDO($dsn, $username, $passwd);
+
 ### SELECT
 
     $res = Sql::select('a, b')
