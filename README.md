@@ -1,5 +1,5 @@
 # ezsql
-An an easy-to-use SQL builder
+An easy-to-use SQL builder
 
 ## HOW TO USE
 

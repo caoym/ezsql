@@ -189,7 +189,7 @@ class WhereRule extends GroupByRule
      *
      * @param string $expr
      * @param mixed $_
-     * @return \caoym\ezsql\rules\select\OrderByRule
+     * @return \caoym\ezsql\rules\select\GroupByRule
      */
     public function where($expr, $_=null) {
         WhereImpl::where($this->context, $expr, array_slice(func_get_args(), 1));
