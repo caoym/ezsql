@@ -1,0 +1,21 @@
+{
+    "name": "caoym/ezsql",
+    "type": "library",
+    "keywords": ["sql","builder","agnostic", "best"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yangmin Cao",
+            "email": "caoyangmin@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "description": "An easy-to-use SQL builder",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": { "caoym\\ezsql\\": "lib/caoym/ezsql" }
+    }
+
+}

@@ -3,6 +3,8 @@
  * $Id$
  * @author caoym(caoyangmin@gmail.com)
  */
+
+namespace caoym\ezsql;
 require_once dirname(__DIR__).'/lib/caoym/AutoLoad.php';
 use caoym\ezsql\Sql;
 
