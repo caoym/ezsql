@@ -1,11 +1,11 @@
 <?php
 /**
- * $Id$
+ * $Id: impls.php 401 2015-11-06 08:28:26Z dong.chen $
  * @author caoym(caoyangmin@gmail.com)
  */
 namespace caoym\ezsql\impls;
-use caoym\utils\NestedStringCut;
-use caoym\utils\Verify;
+use caoym\util\NestedStringCut;
+use caoym\util\Verify;
 use caoym\ezsql\SqlConetxt;
 
 class Response{
@@ -306,18 +306,18 @@ class WhereImpl{
                     $exprs[] = $cond;
                 }else{
                     if(is_a($var, 'caoym\\ezsql\\Native')){
-                        $exprs[] = "$k$op".strval($var);
+                        $exprs[] = "$k $op ".strval($var);
                     }else{
-                        $exprs[] = "$k$op?";
+                        $exprs[] = "$k $op ?";
                         $params[] = $var;
                     }
                 }
             }else{
                 if(is_a($v, 'caoym\\ezsql\\Native')){
-                    $exprs[] = "$k=".strval($v);
+                    $exprs[] = "$k = ".strval($v);
                     
                 }else{
-                    $exprs[] = "$k=?";
+                    $exprs[] = "$k = ?";
                     $params[] = $v;
                 }
             }
@@ -414,15 +414,24 @@ class ExecImpl
      * @param SqlConetxt $context
      * @param PDO $db
      * @param boolean $errExce
+     * @param string $asDict return  as dict or array
      * @return false|array
      */
-    static public function get($context, $db, $errExce=true){
+    static public function get($context, $db, $dictAs=null ,$errExce=true){
         if($errExce){
             $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
         $st = $db->prepare($context->sql);
         if($st->execute($context->params)){
-            return $st->fetchAll(\PDO::FETCH_ASSOC);
+            $res = $st->fetchAll(\PDO::FETCH_ASSOC);
+            if ($dictAs){
+                $dict= [];
+                foreach ($res as $i){
+                    $dict[$i[$dictAs]]=$i;
+                }
+                return $dict;
+            }
+            return $res;
         }else{
             return false;
         }

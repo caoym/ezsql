@@ -1,6 +1,6 @@
 <?php
 /**$Id$*/
-namespace caoym\utils;
+namespace caoym\util;
 
 /**
  * 剪出字符串中的嵌套字符串

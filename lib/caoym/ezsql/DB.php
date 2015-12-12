@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id$
+ * $Id: DB.php 131 2015-10-10 02:25:57Z yangmin.cao $
  * @author caoym(caoyangmin@gmail.com)
  */
 namespace caoym\ezsql;

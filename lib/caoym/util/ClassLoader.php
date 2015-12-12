@@ -9,7 +9,7 @@
  * @author caoyangmin(caoyangmin@baidu.com)
  * @brief 
  */
-namespace caoym\utils;
+namespace caoym\util;
 
 /**
  *  class loader

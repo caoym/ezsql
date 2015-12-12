@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id$
+ * $Id: select.php 246 2015-10-21 04:48:09Z yangmin.cao $
  * @author caoym(caoyangmin@gmail.com)
  */
 namespace caoym\ezsql\rules\select;
@@ -42,8 +42,8 @@ class GetRule extends BasicRule
      * @param $errExce whether throw exceptions
      * @return array
      */
-    public function get($db, $errExce=true) {
-        return ExecImpl::get($this->context, $db, $errExce);
+    public function get($db, $asDict=false,$errExce=true) {
+        return ExecImpl::get($this->context, $db, $asDict,$errExce);
     }
 }
 class FromRule extends GetRule

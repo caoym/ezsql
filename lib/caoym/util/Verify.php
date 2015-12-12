@@ -9,7 +9,7 @@
  * @author caoym(caoyangmin@gmail.com)
  * @brief
  */
-namespace caoym\utils;
+namespace caoym\util;
 /**
  * if(false) throw ;
  * @param boolen $var 判断条件

@@ -4,8 +4,7 @@
  * @author caoym(caoyangmin@gmail.com)
  */
 
-namespace caoym\ezsql;
-require_once dirname(__DIR__).'/lib/caoym/AutoLoad.php';
+require_once __DIR__.'/../../../lib/caoym/AutoLoad.php';
 use caoym\ezsql\Sql;
 
 class DBMock{
@@ -16,6 +15,11 @@ class DBMock{
         
     }
     public function prepare($sql){
+        
+        print ".............\n";
+        print $this->expectedSql."\n";
+        print $sql."\n";
+        
         $this->test->assertEquals($this->expectedSql, $sql);
         return $this;
     }
@@ -40,7 +44,7 @@ class DBMock{
 /**
  * Sql test case.
  */
-class EzsqlTest extends PHPUnit_Framework_TestCase
+class EzsqlTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
@@ -75,10 +79,10 @@ class EzsqlTest extends PHPUnit_Framework_TestCase
     {
         // SELECT col FROM tab WHERE a=1 AND b=now() AND c='c' AND d IN (1,'2', now())
         $this->db->setExpected(
-            'SELECT col FROM tab WHERE a=? AND b=now() AND c=? AND d IN (?,?,now()) AND e BETWEEN ? AND now()',
+            'SELECT col FROM tab WHERE a = ? AND b = now() AND c = ? AND d IN (?,?,now()) AND e BETWEEN ? AND now()',
             1, 'c', 1, '2','e1');
         //      where()
-        Sql::select('col')->from('tab')->where('a=? AND b=? AND c=? AND d IN (?) AND e BETWEEN ? AND now()',
+        Sql::select('col')->from('tab')->where('a = ? AND b = ? AND c = ? AND d IN (?) AND e BETWEEN ? AND now()',
             1, Sql::native('now()'), 'c', [1,'2', Sql::native('now()')],'e1')->get($this->db);
         //      whereArgs()
         Sql::select('col')->from('tab')->whereArgs([
