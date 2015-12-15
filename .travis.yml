@@ -7,6 +7,6 @@ php:
   - hhvm
   - nightly
   
-  script: phpunit ./tests
+script: phpunit ./tests
   
   
