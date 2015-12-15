@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/caoym/ezsql.svg)](https://travis-ci.org/caoym/ezsql)
+
 # ezsql
 An easy-to-use SQL builder
 
