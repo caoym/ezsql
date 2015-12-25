@@ -263,7 +263,7 @@ class JoinOnRule extends BasicRule
      */
     public function on($condition){
         JoinOnImpl::on($this->context, $condition);
-        return new WhereRule($this->context);
+        return new JoinRule($this->context);
     }
 }
 
