@@ -1,5 +1,5 @@
 # ezsql
-An an easy-to-use and ***IDE friendly*** SQL builder.
+An easy-to-use and ***IDE friendly*** SQL builder.
 
 ## HOW TO USE
 
