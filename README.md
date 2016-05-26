@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/caoym/ezsql.svg)](https://travis-ci.org/caoym/ezsql)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/caoym/ezsql/master/LICENSE)
 # ezsql
-An easy-to-use SQL builder
+An easy-to-use and IDE friendly SQL builder
 
 ## HOW TO USE
     
